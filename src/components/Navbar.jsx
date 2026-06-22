@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { useLang } from '../context/LanguageContext';
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const { tr, lang, toggleLang } = useLang();
@@ -31,7 +32,7 @@ export default function Navbar() {
     <motion.nav className={`navbar${scrolled ? ' scrolled' : ''}`} initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.6 }}>
       <div className="navbar-inner container">
         <Link to="/" className="navbar-brand">
-          <span className="brand-icon">🐄</span>
+          <img src={logo} alt="Sri Jnaneshwari Goshala" className="brand-icon" />
           <span className="brand-text">{lang === 'kn' ? 'ಶ್ರೀ ಜ್ಞಾನೇಶ್ವರಿ ಗೋಶಾಲೆ' : 'Sri Jnaneshwari Goshala'}</span>
         </Link>
         <div className="navbar-links">
