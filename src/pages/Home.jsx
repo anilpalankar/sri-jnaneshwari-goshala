@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaShieldAlt, FaHeartbeat, FaUsers, FaPray } from 'react-icons/fa';
 import { useLang } from '../context/LanguageContext';
+import guruji from '../assets/guruji.png';
 
 const icons = [FaShieldAlt, FaHeartbeat, FaUsers, FaPray];
 
@@ -13,6 +14,7 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="hero-overlay" />
+        <img src={guruji} alt="Guruji" className="hero-guruji" />
         <div className="hero-particles">
           {[...Array(12)].map((_, i) => (
             <span key={i} className="particle" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s`, animationDuration: `${4 + Math.random() * 4}s` }}>✦</span>
@@ -81,6 +83,18 @@ export default function Home() {
           position: absolute;
           inset: 0;
           background: radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%);
+        }
+        .hero-guruji {
+          position: absolute;
+          right: 5%;
+          bottom: 0;
+          height: 85%;
+          opacity: 0.15;
+          object-fit: contain;
+          pointer-events: none;
+          z-index: 1;
+          mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+          -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
         }
         .hero-particles {
           position: absolute;
@@ -194,6 +208,7 @@ export default function Home() {
           .hero h1 { font-size: 2.2rem; }
           .hero-tagline { font-size: 1rem; }
           .hero-content { padding-top: 100px; }
+          .hero-guruji { height: 60%; right: 0; opacity: 0.1; }
         }
         @media (max-width: 480px) {
           .hero h1 { font-size: 1.8rem; }
