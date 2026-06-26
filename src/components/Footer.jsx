@@ -12,7 +12,8 @@ export default function Footer() {
       </div>
       <div className="container footer-inner">
         <div className="footer-brand">
-          <span className="brand-icon">🐄</span>
+          <img src="src/assets/logo.png" alt="Sri Jnaneshwari Goshala" class="footer-brand-icon"></img>
+          
           <h3>{tr.hero.title}</h3>
           <p>{tr.hero.location}</p>
         </div>

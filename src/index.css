@@ -299,8 +299,8 @@ img {
   color: var(--primary);
 }
 
-.brand-icon { width: 52px; height: 52px; object-fit: contain; }
-
+.brand-icon { width: 52px; height: 52px; object-fit: contain; background: url(/src/assets/logo.png) center/3rem no-repeat; }
+.footer-brand-icon{ width: 80px; height: 80px; object-fit: contain; background: url(/src/assets/logo.png) center/5rem no-repeat; }
 .brand-text {
   background: linear-gradient(135deg, var(--primary), var(--gold));
   -webkit-background-clip: text;

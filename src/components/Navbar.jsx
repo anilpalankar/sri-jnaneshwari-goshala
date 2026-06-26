@@ -32,7 +32,7 @@ export default function Navbar() {
     <motion.nav className={`navbar${scrolled ? ' scrolled' : ''}`} initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.6 }}>
       <div className="navbar-inner container">
         <Link to="/" className="navbar-brand">
-          <img src={logo} alt="Sri Jnaneshwari Goshala" className="brand-icon" />
+          <img   className="brand-icon" />
           <span className="brand-text">{lang === 'kn' ? 'ಶ್ರೀ ಜ್ಞಾನೇಶ್ವರಿ ಗೋಶಾಲೆ' : 'Sri Jnaneshwari Goshala'}</span>
         </Link>
         <div className="navbar-links">

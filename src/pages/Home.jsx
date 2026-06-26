@@ -89,12 +89,14 @@ export default function Home() {
           right: 5%;
           bottom: 0;
           height: 85%;
-          opacity: 0.15;
+          opacity: 0.55;
           object-fit: contain;
           pointer-events: none;
           z-index: 1;
-          mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
-          -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+          mix-blend-mode: soft-light;
+          filter: contrast(1.15) brightness(1.1);
+          mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 70%, transparent 100%);
+          -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 70%, transparent 100%);
         }
         .hero-particles {
           position: absolute;
@@ -208,7 +210,7 @@ export default function Home() {
           .hero h1 { font-size: 2.2rem; }
           .hero-tagline { font-size: 1rem; }
           .hero-content { padding-top: 100px; }
-          .hero-guruji { height: 60%; right: 0; opacity: 0.1; }
+          .hero-guruji { height: 60%; right: 0; opacity: 0.5; }
         }
         @media (max-width: 480px) {
           .hero h1 { font-size: 1.8rem; }
