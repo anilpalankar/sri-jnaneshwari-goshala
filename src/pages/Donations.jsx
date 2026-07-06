@@ -7,6 +7,18 @@ export default function Donations() {
   const { tr } = useLang();
   const [copied, setCopied] = useState(null);
 
+  const recentDonors = [
+    { id: 1, name: 'Prabhu Santhanam', timestamp: '05-07-2026 09:51:07', amount: '₹2,100' },
+    { id: 2, name: 'Sharon', timestamp: '05-07-2026 09:47:04', amount: '₹500' },
+    { id: 3, name: 'Prasenjit Sir', timestamp: '05-07-2026 09:45:22', amount: '₹5,000' },
+    { id: 4, name: 'Nisha Agrawal', timestamp: '05-07-2026 03:51:37', amount: '₹1,000' },
+    { id: 5, name: 'Mohit Kumar Sinha', timestamp: '05-07-2026 03:39:59', amount: '₹2,500' },
+    { id: 6, name: 'Parteek Raj', timestamp: '05-07-2026 02:15:44', amount: '₹3,000' },
+    { id: 7, name: 'Bhushan Bagul', timestamp: '05-07-2026 10:26:50', amount: '₹1,500' },
+    { id: 8, name: 'Mayurkumar Patel', timestamp: '05-07-2026 10:21:07', amount: '₹2,000' },
+    { id: 9, name: 'Ajay Todaria', timestamp: '05-07-2026 10:18:33', amount: '₹4,500' },
+  ];
+
   const copyText = (text, key) => {
     navigator.clipboard?.writeText(text);
     setCopied(key);
@@ -83,6 +95,31 @@ export default function Donations() {
         </div>
       </section>
 
+      {/* Recent Donors Section */}
+      <section className="section recent-donors-section">
+        <div className="container">
+          <motion.div className="recent-donors-header" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2>Recent Donors</h2>
+            <p>Join our community of generous supporters</p>
+          </motion.div>
+
+          <div className="donors-grid">
+            {recentDonors.map((donor, i) => (
+              <motion.div key={donor.id} className="donor-card" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.05 }}>
+                <div className="donor-avatar">
+                  {donor.name.charAt(0).toUpperCase()}
+                </div>
+                <div className="donor-info">
+                  <h3>{donor.name}</h3>
+                  <p className="donor-time">{donor.timestamp}</p>
+                  <p className="donor-amount">{donor.amount}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <style>{`
         .donations-hero { background: linear-gradient(135deg, #1a0a00, #5C0E0E, #8B1A1A); }
         .donations-intro { text-align: center; max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; color: var(--brown-light); }
@@ -117,6 +154,23 @@ export default function Donations() {
         .upi-note { font-size: 0.85rem; color: var(--gray); margin-bottom: 16px; }
         .qr-placeholder { width: 160px; height: 160px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: var(--cream); border-radius: var(--radius); border: 2px dashed var(--gold); }
         .qr-icon { font-size: 4rem; color: var(--gold); opacity: 0.4; }
+        
+        /* Recent Donors Section */
+        .recent-donors-section { background: var(--cream); }
+        .recent-donors-header { text-align: center; margin-bottom: 40px; }
+        .recent-donors-header h2 { font-size: 2rem; color: var(--primary); margin-bottom: 8px; }
+        .recent-donors-header p { color: var(--gray); font-size: 1rem; }
+        
+        .donors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+        .donor-card { background: var(--white); border: 1px solid rgba(212,175,55,0.15); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 16px; transition: var(--transition); box-shadow: var(--shadow); cursor: pointer; }
+        .donor-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-gold); border-color: var(--gold); }
+        
+        .donor-avatar { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; flex-shrink: 0; border: 3px solid rgba(212,175,55,0.2); }
+        
+        .donor-info { flex: 1; min-width: 0; }
+        .donor-info h3 { font-size: 1rem; color: var(--primary); margin: 0 0 6px 0; font-weight: 700; word-break: break-word; }
+        .donor-time { font-size: 0.8rem; color: var(--gray); margin: 0; line-height: 1.4; }
+        .donor-amount { font-size: 0.9rem; color: var(--gold-dark); font-weight: 600; margin: 4px 0 0 0; }
       `}</style>
     </div>
   );

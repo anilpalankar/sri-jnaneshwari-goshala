@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { FaShieldAlt, FaHeartbeat, FaUsers, FaPray } from 'react-icons/fa';
 import { useLang } from '../context/LanguageContext';
 import guruji from '../assets/guruji.png';
+import FoodGallery from '../components/FoodGallery';
+import AdoptionProgram from '../components/AdoptionProgram';
 
 const icons = [FaShieldAlt, FaHeartbeat, FaUsers, FaPray];
 
@@ -67,6 +69,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Food Gallery */}
+      <FoodGallery />
+
+      {/* Adoption Program */}
+      <AdoptionProgram />
 
       <style>{`
         .hero {

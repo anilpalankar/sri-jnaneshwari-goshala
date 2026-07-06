@@ -215,6 +215,606 @@ img {
   }
 }
 
+.food-gallery-section,
+.adoption-section {
+  padding: 6rem 0;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: #fff3cd;
+  color: #7c5100;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  max-width: 42rem;
+  margin: 0 auto;
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.category-filter,
+.adoption-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-button,
+.btn,
+.adoption-actions a,
+.faq-toggle,
+.adoption-plan-card button {
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-button {
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.filter-button:hover {
+  background: #fde68a;
+}
+
+.filter-button.active {
+  background: #d97706;
+  color: #ffffff;
+  box-shadow: 0 10px 18px rgba(217, 119, 6, 0.18);
+}
+
+.gallery-grid,
+.adoption-steps,
+.adoption-plans,
+.adoption-stats-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gallery-grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.adoption-steps,
+.adoption-plans {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .adoption-steps,
+  .adoption-plans {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .adoption-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.gallery-card,
+.adoption-step-card,
+.adoption-plan-card,
+.faq-card,
+.adoption-cta {
+  border-radius: 24px;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-card-media {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  overflow: hidden;
+}
+
+.gallery-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.gallery-card:hover .gallery-card-image {
+  transform: scale(1.08);
+}
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.72));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-card-overlay {
+  opacity: 1;
+}
+
+.gallery-card-overlay h3,
+.gallery-card-body h3,
+.lightbox-header h3,
+.adoption-step-card h3,
+.adoption-plan-card h3,
+.adoption-stat-number,
+.adoption-cta h3,
+.faq-title {
+  margin: 0;
+}
+
+.gallery-card-overlay h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.gallery-card-overlay p,
+.gallery-card-body p,
+.lightbox-content p,
+.adoption-step-card p,
+.adoption-plan-card li span,
+.faq-answer,
+.adoption-cta p {
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.gallery-card-body {
+  padding: 1.25rem;
+}
+
+.gallery-card-body h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  padding: 1.25rem;
+}
+
+.lightbox-card {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
+  animation: fadeIn 0.24s ease-out forwards;
+}
+
+.lightbox-image {
+  width: 100%;
+  display: block;
+  height: 16rem;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .lightbox-image {
+    height: 20rem;
+  }
+}
+
+.lightbox-content {
+  padding: 1.5rem;
+}
+
+.lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lightbox-close {
+  border: none;
+  background: transparent;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  color: var(--brown);
+}
+
+.icon-close,
+.icon-arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.tag-pill {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.4rem 0.85rem;
+  background: #ffefd5;
+  color: #92400e;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.gallery-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.gallery-cta p {
+  max-width: 42rem;
+  margin: 0 auto 1rem;
+  color: var(--gray);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #ffffff;
+  box-shadow: 0 18px 35px rgba(139, 26, 26, 0.18);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #7f1515, #b22b2b);
+}
+
+.adoption-section {
+  background: linear-gradient(180deg, #fff8ed 0%, #fff1d4 100%);
+}
+
+.adoption-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.adoption-step-card,
+.adoption-plan-card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 2rem 1.5rem;
+  border-radius: 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.adoption-step-card:hover,
+.adoption-plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
+}
+
+.adoption-step-badge {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.step-icon,
+.plan-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.adoption-step-card h3,
+.adoption-plan-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.adoption-plan-card.highlighted {
+  border-color: #f6ad55;
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  color: #ffffff;
+  box-shadow: 0 25px 50px rgba(249, 115, 22, 0.2);
+  transform: scale(1.02);
+}
+
+.adoption-plan-card.highlighted h3,
+.adoption-plan-card.highlighted .plan-duration,
+.adoption-plan-card.highlighted .adoption-plan-features li span {
+  color: #ffffff;
+}
+
+.plan-duration {
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+}
+
+.plan-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.plan-price strong {
+  font-size: 2.25rem;
+  font-family: 'Cinzel', serif;
+}
+
+.plan-price span {
+  font-size: 0.95rem;
+  color: rgba(51, 65, 85, 0.7);
+}
+
+.adoption-plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem 0;
+  display: grid;
+  row-gap: 0.85rem;
+}
+
+.adoption-plan-features li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  color: #4b5563;
+}
+
+.adoption-plan-features li svg {
+  color: #16a34a;
+  margin-top: 0.2rem;
+  min-width: 1rem;
+}
+
+.adoption-plan-card.highlighted .adoption-plan-features li svg {
+  color: #f8e3a2;
+}
+
+.adoption-plan-card button.primary {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  background: #c2410c;
+  color: #ffffff;
+}
+
+.adoption-plan-card.highlighted button.primary {
+  background: #facc15;
+  color: #92400e;
+}
+
+.adoption-stats {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+  border-radius: 24px;
+  padding: 2.5rem 1.5rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.adoption-stats h3 {
+  margin-bottom: 2rem;
+}
+
+.adoption-stats-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.adoption-stat {
+  color: inherit;
+}
+
+.adoption-stat-number {
+  font-size: 2rem;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 0.35rem;
+}
+
+.adoption-stat-label {
+  font-size: 0.95rem;
+}
+
+.adoption-faqs {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.faq-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: #ffffff;
+}
+
+.faq-toggle:hover {
+  background: #fffbeb;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-icon.open {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 1.25rem 1rem;
+  color: #4b5563;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.adoption-cta {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 2rem 1.5rem;
+}
+
+.adoption-cta-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.adoption-cta h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.adoption-cta p {
+  max-width: 42rem;
+  margin: 0 auto 1.5rem;
+  color: var(--gray);
+}
+
+.adoption-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.adoption-actions a.primary {
+  background: #f59e0b;
+  color: #92400e;
+}
+
+.adoption-actions a.secondary {
+  background: #ffffff;
+  border: 2px solid #f59e0b;
+  color: #92400e;
+}
+
+.adoption-actions a:hover {
+  transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ===== Page Hero (shared across pages) ===== */
 .page-hero {
   position: relative;

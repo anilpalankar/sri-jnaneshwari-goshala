@@ -7,6 +7,7 @@ import About from './pages/About';
 import Seva from './pages/Seva';
 import Donations from './pages/Donations';
 import Gallery from './pages/Gallery';
+import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/seva" element={<Seva />} />
             <Route path="/donations" element={<Donations />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

@@ -25,6 +25,7 @@ export default function Navbar() {
     { to: '/seva', label: tr.nav.seva },
     { to: '/donations', label: tr.nav.donations },
     { to: '/gallery', label: tr.nav.gallery },
+    { to: '/testimonials', label: 'Testimonials' },
     { to: '/contact', label: tr.nav.contact },
   ];
 
